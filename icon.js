@@ -1,0 +1,36 @@
+const fs = require('fs');
+
+// Create a simple SVG icon
+const svgContent = `
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" fill="#3498db"/>
+  
+  <!-- Draw a few checkboxes -->
+  <g stroke="#2c3e50" stroke-width="8" fill="none">
+    <!-- Row 1 -->
+    <rect x="40" y="40" width="50" height="50"/>
+    <rect x="110" y="40" width="50" height="50"/>
+    <rect x="180" y="40" width="50" height="50"/>
+    
+    <!-- Row 2 -->
+    <rect x="40" y="110" width="50" height="50"/>
+    <rect x="110" y="110" width="50" height="50"/>
+    <rect x="180" y="110" width="50" height="50"/>
+    
+    <!-- Row 3 -->
+    <rect x="40" y="180" width="50" height="50"/>
+    <rect x="110" y="180" width="50" height="50"/>
+    <rect x="180" y="180" width="50" height="50"/>
+  </g>
+  
+  <!-- Checkmarks -->
+  <g stroke="#2c3e50" stroke-width="8" fill="none">
+    <path d="M50,65 L65,80 L85,55" />
+    <path d="M120,135 L135,150 L155,125" />
+    <path d="M190,205 L205,220 L225,195" />
+  </g>
+</svg>
+`;
+
+fs.writeFileSync('icon.svg', svgContent);
+console.log('SVG icon created successfully!');
